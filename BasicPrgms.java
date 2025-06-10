@@ -62,5 +62,46 @@ public class BasicPrgms
 			System.out.println("number = " + i);
 		}	
 		System.out.println("\nTotal Count for divisible of Five = " + count); */
+		
+		
+/*   6]   //--- pallindrom number ---//	
+		
+		 int i,r,sum=0,num=1221,num1;
+		 num1=num;
+			for(i=1;i<=num1;num1=num1/10)
+			{
+					r=num1 % 10;
+					sum=sum * 10 + r;
+			}
+				if(num==sum)
+				{
+					System.out.println("Yes pallindrom number =" + num);
+				}
+				else
+				{
+					System.out.println("Not a pallindrom number=" + num);	
+				}						*/
+		
+/*   7]   //--- Factorial of a number ---//	
+		
+		int num =5,sum=1;
+		while(num>0)
+		{
+		sum=sum*num;
+		num--;
+		} 	
+		System.out.println("fact="+ sum);  */
+		
+		
+/*   8]   //--- Multiplication  ---//	
+ 
+		int i,j,num;
+		for(num=7,i=1;i<=10;i++)
+		{
+			// System.out.println("7 * i = "+ num*i);
+			System.out.println(num + " * " + i + " = " + (num * i));
+		}																 */
+		
+		
 	}
 }
