@@ -17,27 +17,22 @@ public class MethodsFundamentals
 			}
 			System.out.print("\n");
 		}  */
-	
-/*  2] //---------- Divisible by 3 & 5  ------//
+
+/*  2] //----------  Number's Divisible by 3 or 5 -------//
 		
-		int i,count1=0,count2=0;
+		int i,count1=0;
 		for(i=1;i<=100;i++)
 		{
-			if(i%3==0)
+			if(i%3==0 || i%5==0)
 			{
 				count1++;
-				System.out.println("Div by 3 ="+i);
-			}
-			if(i%5==0)
-			{
-				count2++;
-				System.out.println("Div by 5 ="+i);
-			}
+				System.out.println("Div by 3 OR 5 ="+i);
+			}		
 		}
 		System.out.print("\n");
-		System.out.println("count1 = "+count1);	
-		System.out.println("count2 = "+count2);	   */
-
+		System.out.println("count1 = "+count1);	    */
+		
+		
 /* 3]   //------  prime numbers from 1 to 100    ------//
 		
 		int i,j,num=100,Count=0;
