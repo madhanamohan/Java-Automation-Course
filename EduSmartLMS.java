@@ -1,14 +1,12 @@
 package corejaveproject;
-//5. interface ProgressTrackable 
+
 interface ProgressTrackable 
-{
-// Method: void trackProgress(); 
+{ 
 void trackProgress();
 }
 
-//1. abstract class User [Parent]
 abstract class User
-{ // Fields: name, email, userld
+{ 
 	 private String name;
 	 private String email;
 	 private String userId; 
@@ -45,7 +43,6 @@ abstract class User
 	     System.out.println("Wlcm, " + name + " (" + userId + ") to LMS");
 	 }
 }
-//2. class Student extends User implements ProgressTrackable
 class Student extends User implements ProgressTrackable
 {
 	 private String enrolledCourse1;
@@ -115,7 +112,7 @@ class Student extends User implements ProgressTrackable
 	         System.out.println("- No courses enrolled yet.");
 	     }
 	 }	
-	 // Getters and Setters for enrolled courses [cite: 69]
+	 // Getters and Setters for enrolled courses
 	 public void setEnrolledCourse1(String enrolledCourse1) 
 	 {
 	     this.enrolledCourse1 = enrolledCourse1;
@@ -133,7 +130,6 @@ class Student extends User implements ProgressTrackable
 	     this.enrolledCourse2 = enrolledCourse2;
 	 }
 }
-//3. class Instructor extends User
 class Instructor extends User 
 	{
 	 private String createdCourse1;
@@ -145,12 +141,11 @@ class Instructor extends User
 	     super(name, email, userId); 
 	     this.createdCourse1 = null; 
 	     this.createdCourse2 = null; 
-	 }
-	 // Method: createCourse(String courseName) → store course name 
+	 } 
 	 public void createCourse(String courseName)
 	 {
 	     if (createdCourseCount < MAX_CREATED_COURSES) 
-	     { // Bonus Challenge: Restrict to 2 courses
+	     { 
 	         if (this.createdCourse1 == null)
 	         { 
 	             this.createdCourse1 = courseName; 
@@ -168,8 +163,7 @@ class Instructor extends User
 	     {
 	         System.out.println(getName() + " cannot create " + courseName + ". Maximum courses (" + MAX_CREATED_COURSES + ") reached.");
 	     }
-	 }
-	 // Override viewProfile() 
+	 } 
 	 @Override 
 	 public void viewProfile() 
 	 { 
@@ -179,8 +173,7 @@ class Instructor extends User
 	     System.out.println("User ID: " + super.getUserId()); 
 	     System.out.println("Created Courses: " + (createdCourse1 != null ? createdCourse1 : "None") +
 	             (createdCourse2 != null ? ", " + createdCourse2 : ""));
-	 }
-	 // Getters and Setters for created courses  
+	 } 
 	 public void setCreatedCourse1(String createdCourse1)
 	 {
 	   this.createdCourse1 = createdCourse1;
@@ -198,12 +191,11 @@ class Instructor extends User
 	     return createdCourse2;
 	 }			
 }
-//4. class Admin extends User [cite: 55]
 class Admin extends User
 {
 	 public Admin(String name, String email, String userId) 
 	 {
-	     super(name, email, userId); // [cite: 36, 72]
+	     super(name, email, userId); 
 	 }
 	 public void removeUser(User user)
 	 {
@@ -221,34 +213,27 @@ class Admin extends User
 }
 class Course 
 {
-	// Fields: String title, int durationInHours, final int maxStudents [cite: 61]
 	private String title;
 	private int durationInHours;
 	private final int maxStudents; 
-	// Overloaded constructors: [cite: 62]
-	// Constructor 1: Accepts title, duration, and maxStudents [cite: 63]
 	public Course(String title, int durationInHours, int maxStudents) 
 	{
-	    this.title = title; // [cite: 34]
-	    this.durationInHours = durationInHours; // [cite: 34]
-	    this.maxStudents = maxStudents; // [cite: 34]
+	    this.title = title; 
+	    this.durationInHours = durationInHours; 
+	    this.maxStudents = maxStudents; 
 	}	
-	// Constructor 2: Accepts only title [cite: 65]
-	// Method Overloading example [cite: 27, 70]
 	public Course(String title) 
 	{
-	    this(title, 0, 0); // Calls the first constructor using 'this' to initialize other fields [cite: 34]
-	    System.out.println("Note: Duration and Max Students for " + title + " not specified. Using defaults (0).");
+	    this(title, 0, 0); // Calls the first constructor using 'this' to initialize other fields
+	  
 	}	
-	// Method: void showCourseDetails() [cite: 66]
 	public void showCourseDetails() 
 	{
-	    System.out.println("\n--- Course Details ---");
 	    System.out.println("Title: " + title);
 	    System.out.println("Duration: " + (durationInHours > 0 ? durationInHours + " hours" : "Not specified"));
 	    System.out.println("Max Students: " + (maxStudents > 0 ? maxStudents : "Not specified"));
+	    System.out.println();
 	}	
-	// Getters and Setters [cite: 69]
 	public void setTitle(String title) 
 	{
 	    this.title = title;
@@ -275,7 +260,7 @@ public class EduSmartLMS
 {
 	public static void main(String[] args) 
 	{
-        System.out.println("Welcome to EduSmart-Learning Management System\n"); //  1. Create 2 students, 2 instructors, and 1 admin. [cite: 76]
+        System.out.println("Welcome to EduSmart-Learning Management System\n"); 
         Student student1 = new Student("Ram", "Ram@gmail.com", "T2152");
         Student student2 = new Student("Shiva", "Shiva@gmail.com", "T2153");
         
@@ -284,7 +269,6 @@ public class EduSmartLMS
         
         Admin admin1 = new Admin("Admin", "admin@gmail.com", "A1235");
         
-  // Display welcome messages
         student1.displayWelcome();
         student2.displayWelcome();
         
@@ -293,7 +277,6 @@ public class EduSmartLMS
         
         admin1.displayWelcome(); 
         
-  // 2. Instructors create two courses each. 
         System.out.println("\n Instructors---");
         
         instructor1.createCourse("Java");  
@@ -305,7 +288,6 @@ public class EduSmartLMS
         instructor2.createCourse("Selenium");
         instructor2.createCourse("AI & ML");  
         
-        // 3. Students enroll in available courses. 
         System.out.println("\n--- Students Enrolling in Courses \n---");
         
         student1.enrollCourse("Java"); 
@@ -315,33 +297,29 @@ public class EduSmartLMS
         student2.enrollCourse("SQl"); 
         student2.enrollCourse("Selenium"); 
 
- // 4. Display user profiles
         student1.viewProfile(); 
         student2.viewProfile(); 
+        
         instructor1.viewProfile(); 
         instructor2.viewProfile(); 
         admin1.viewProfile(); 
-        
- // 5. Students track progress
         
         System.out.println("\n--- Student Progress Tracking ---");
         student1.trackProgress(); 
         student2.trackProgress(); 
         
- // 6. Admin removes a user (just print message)
         System.out.println("\n--- Admin Actions ---");
         admin1.removeUser(student1); 
         admin1.removeUser(instructor2); 
 
-  // 7. Display course details
         System.out.println("\n--- Course Details ---");
-        Course javaCourse1 = new Course("Introduction to Java", 40, 30);
+        Course javaCourse1 = new Course("Introduction to Java", 20, 10);
         javaCourse1.showCourseDetails();
 
         Course webCourse2 = new Course("Web Development Basics"); // Overloaded constructor
         webCourse2.showCourseDetails();
 
-        Course algorithmsCourse = new Course("Advanced Algorithms", 60, 25);
+        Course algorithmsCourse = new Course("Advanced Algorithms", 30, 20);
         algorithmsCourse.showCourseDetails();
 
         Course dbCourse = new Course("Database Management");
