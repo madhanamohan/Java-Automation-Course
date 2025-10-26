@@ -17,7 +17,7 @@ public class BasicPrgms
 		System.out.println("Sum of the Digits =" + sum);   */
 		
 		
-/*	2]	//---  SUM of the Digits  ---//
+//	2]	//---  Count of the Digits  ---//
 		 
 		
 		 int i,count=1,num=1235;
@@ -25,7 +25,7 @@ public class BasicPrgms
 			{
 				count++;
 			}
-		System.out.println("No.of Digits =" + count);    */	
+		System.out.println("No.of Digits =" + count);    
 		
 	
 /*   3]   //---  Sum of 1st 100 num's  ---//
@@ -102,6 +102,66 @@ public class BasicPrgms
 			System.out.println(num + " * " + i + " = " + (num * i));
 		}																 */
 		
+/*	
+  
+ 		String s1="MaDhan";
+		int i;
+		for(i=0;i<s1.length();i++)
+		{
+			System.out.println("char at:"+i +" "+s1.charAt(i));
+		}
+		System.out.println("lower="+s1.toLowerCase());
+		System.out.println("upper="+s1.toUpperCase());
+		System.out.println("len="+s1.length());				*/
+		
+		
+/*	9] Vowels count Method:1 
+
+  	String s1="HEllO HOW ARE you doing today?", str="aeiouAEIOU";
+ 
+		int i,j,count=0;
+		
+		
+		for(i=0;i<s1.length();i++)
+		{
+		/*	for(j=0;j<str.length();j++)
+			{
+				if(s1.charAt(i)==str.charAt(j))
+				{
+					System.out.println(str.charAt(j));
+					count++;
+				}
+			}		*/
+		
+//---	9] Vowels count Method:2
+		
+	/*		char ch=s1.charAt(i);
+			if(str.indexOf(ch)!=-1)
+			{
+				System.out.println("vowel->"+ch);
+				count++;
+			}
+			
+		}
+		System.out.println("count:"+count);		*/
+		
+		
+/* 9] Vowels count Method:3
+ 
+		String s1="HEllO HOW ARE you doing today?";
+		int i,j,count=0;
+		for(i=0;i<s1.length();i++)
+		{
+		
+			char ch=s1.charAt(i);
+			ch=Character.toLowerCase(ch);
+			if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+			{
+				count++;
+				System.out.println("vowel->"+ch);
+			}
+		}
+		System.out.println("count:"+count);			*/
 		
 	}
 }
